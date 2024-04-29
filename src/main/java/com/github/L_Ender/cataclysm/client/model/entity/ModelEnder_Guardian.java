@@ -485,7 +485,7 @@ public class ModelEnder_Guardian extends AdvancedEntityModel<Ender_Guardian_Enti
 
         animator.setStaticKeyframe(3);
 
-        animator.startKeyframe(3);//54찍기
+        animator.startKeyframe(3);
         animator.move(right_leg,0,0,2);
         animator.move(left_leg,0,0,-8);
         animator.rotate(lowerbody,(float)Math.toRadians(15f),0,0);
@@ -515,7 +515,7 @@ public class ModelEnder_Guardian extends AdvancedEntityModel<Ender_Guardian_Enti
         animator.rotate(helmet,(float)Math.toRadians(17.5f),0,0);
         animator.endKeyframe();
 
-        animator.startKeyframe(3);//63 찍기
+        animator.startKeyframe(3);
         animator.move(right_leg,0,0,2);
         animator.move(left_leg,0,0,-8);
         animator.rotate(lowerbody,(float)Math.toRadians(15f),0,0);

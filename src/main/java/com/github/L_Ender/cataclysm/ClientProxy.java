@@ -178,32 +178,11 @@ public class ClientProxy extends CommonProxy {
         CuriosRendererRegistry.register(ModItems.SANDSTORM_IN_A_BOTTLE.get(), RendererSandstorm_In_A_Bottle::new);
         CuriosRendererRegistry.register(ModItems.STICKY_GLOVES.get(), RendererSticky_Gloves::new);
         CuriosRendererRegistry.register(ModItems.KOBOLEDIATOR_SKULL.get(), CurioHeadRenderer::new);
-
-        addServerToList("ender.purpleprison.net", "Purple Prison");
     }
 
     @OnlyIn(Dist.CLIENT)
     public static Callable<BlockEntityWithoutLevelRenderer> getTEISR() {
         return CMItemstackRenderer::new;
-    }
-
-    public void addServerToList(String address, String name) {
-        if(CMConfig.AddedServerlist) {
-            ServerList serverList = new ServerList(Minecraft.getInstance());
-            serverList.load();
-            ServerData serverData = serverList.get(address);
-            ServerData serverData2 = new ServerData(name, address, false);
-            if (serverData != null) {
-                serverList.remove(serverData);
-            }
-            serverList.add(serverData2, false);
-
-            for (int i = serverList.size() - 1; i > 0; i--) {
-                serverList.swap(i, i - 1);
-            }
-
-            serverList.save();
-        }
     }
 
     public Player getClientSidePlayer() {
